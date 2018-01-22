@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		aaaaa
+	</body>
+	<script type="text/javascript">
+		if (navigator.geolocation) {
+//			alert('ok');
+			navigator.geolocation.getCurrentPosition(function (position) {
+				alert('经度：' + position.coords.longitude + '，纬度：' + position.coords.latitude);
+			}, function (err) {
+				var errType = {
+					1: "位置服务被拒绝",
+					2: "获取不到位置信息",
+					3: "获取位置超时"
+				}
+				alert(errType[err.code]);
+			}, {
+				//高精度
+				enableHighAccuracy: true,
+				//最大响应时间
+				timeout: 8000
+			});
+		}
+	</script>
+</html>

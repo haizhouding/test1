@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box{
+				width: 600px;
+				height: 500px;
+				margin: 100px auto;
+				border: 1px solid black;
+			}
+			
+			#box .control{
+				height: 100px;
+			}
+			
+			#box .control div{
+				height: 50px;
+				line-height: 50px;
+			}
+			
+			#box .control .changeColor{
+				padding-left: 15px;
+			}
+			
+			#box .control .changeColor input{
+				width: 30px;
+				height: 30px;
+				margin: 0 15px;
+				font-size: 0;
+				/*background-color: orange;*/
+				vertical-align: middle;
+			}
+			
+			#box .control .changeColor input:nth-of-type(1){
+				background-color: black;
+			}
+			
+			#box .control .changeColor input:nth-of-type(2){
+				background-color: pink;
+			}
+			
+			#box .control .changeColor input:nth-of-type(3){
+				background-color: red;
+			}
+			
+			#box .control .changeColor input:nth-of-type(4){
+				background-color: orange;
+			}
+			
+			#box .control .changeColor input:nth-of-type(5){
+				background-color: brown;
+			}
+			
+			#box .control .changeColor input:nth-of-type(6){
+				background-color: purple;
+			}
+			
+			#box .control .clear{
+				height: 50px;
+			}
+			
+			#box .control .clear input{
+				width: 100px;
+				height: 50px;
+				margin: 0 15px;
+				font-size: 20px;
+				background-color: #FDF5E5;
+			}
+			
+			#canvas{
+				background-color: #FFEBCB;
+			}
+			
+			b{
+				font-size: 20px;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="control">
+				<div class="changeColor">
+					选择画笔颜色：
+					<input type="button" value="黑色" />
+					<input type="button" value="粉色" />
+					<input type="button" value="红色"/>
+					<input type="button" value="橘色"/>
+					<input type="button" value="棕色" />
+					<input type="button" value="紫色" />
+				</div>
+				<div class="clear">
+					<input type="button" value="清空画布" id="clearAllBtn" />
+					当前选中的颜色：<b>黑色</b>
+					<input type="button" value="橡皮擦" id="rubberBtn" />
+				</div>
+			</div>
+			<canvas id="canvas" width="600" height="400"></canvas>
+        </div>
+        
+		<script type="text/javascript">
+        	var canvas = document.querySelector('#canvas');
+        	var context = canvas.getContext('2d');
+        	var btn = document.querySelectorAll('.changeColor input');
+			var b = document.querySelector('b');   	
+			var clearAllBtn = document.querySelector('#clearAllBtn');   	
+			var rubberBtn = document.querySelector('#rubberBtn');   	
+        	// 储存之前点的坐标
+        	var pointerObj = {};
+        	var isRubber = false;
+        	canvas.style.cursor = 'url(./Sonic pen.cur), default';
+
+        	canvas.onmousedown = function (e) {
+        		pointerObj.x = e.offsetX;
+        		pointerObj.y = e.offsetY;
+        		canvas.addEventListener('mousemove', move, false);
+        	}
+        	canvas.addEventListener('mouseup', up, false);
+
+        	for (var i = 0; i < btn.length; i++) {
+        		btn[i].addEventListener('click', function () {
+        			b.innerText = this.value;
+        			b.style.color = window.getComputedStyle(this, null)['background-color'];
+        			context.strokeStyle = b.style.color;
+        			isRubber = false;
+        			canvas.style.cursor = ' default';
+        		}, false)
+        	}
+
+
+        	function move (e) {
+        		// console.log('dfd');
+        		if (!isRubber) {
+        			draw (e.offsetX, e.offsetY)
+	        		pointerObj.x = e.offsetX;
+	        		pointerObj.y = e.offsetY;
+        		} else {
+        			rubber(e.offsetX, e.offsetY)
+        		}
+        		
+        	}
+
+        	function up () {
+        		this.removeEventListener('mousemove', move, false)
+        	}
+ 
+        	function draw (x, y) {
+        		context.lineCap = 'round';
+        		context.lineWidth = 5;
+        		context.beginPath();
+        		context.moveTo(x, y);
+        		context.lineTo(pointerObj.x, pointerObj.y);
+        		context.stroke();
+        		context.closePath();
+        	}
+
+        	function rubber (x, y) {
+        		context.beginPath();
+        		context.save();
+        		context.arc(x, y, 20, 0, Math.PI * 2, false);
+        		context.clip();
+        		context.clearRect(0, 0, canvas.width, canvas.height);
+        		context.restore();
+        		context.closePath();
+        	}
+
+
+
+        	clearAllBtn.addEventListener('click', function () {
+        		context.clearRect(0 , 0, canvas.width, canvas.height)
+        	}, false);
+        	rubberBtn.addEventListener('click', function () {
+        		isRubber = true;
+        		canvas.style.cursor = 'url(./cur.cur), default';	
+        	}, false);
+
+        </script>
+	</body>
+</html>

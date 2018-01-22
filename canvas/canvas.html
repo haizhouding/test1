@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			
+		}
+		table{
+			box-shadow: 10px 10px 10px grey;
+			width: 1000px;
+			height: 500px;
+		}
+		td {
+			border: 1px dashed grey;
+			width:50px;
+			vertical-align: top;
+		}
+		canvas{
+			position: fixed;
+			left: 0;
+			top: 0;
+			z-index: 0;
+		}
+	</style>
+	
+<body>
+		<canvas width="1000" height="500"></canvas>
+		<table border="1" cellspacing="0" cellspacing="0"></table>
+</body>
+	<script type="text/javascript">
+		var table = document.querySelector('table');
+		for (var i = 0; i < 10; i++) {
+			var tr = document.createElement('tr');
+			for (var j = 0; j < 20; j++) {
+				var td = document.createElement('td');
+				if ( j == 0) {
+					td.innerText = (i ) * 50;
+				}
+				if ( i == 0) {
+					td.innerText = (j ) * 50;
+				}
+				tr.appendChild(td);
+			}
+			table.appendChild(tr);
+		}
+
+
+
+		var canvas = document.querySelector('canvas');
+
+		var context = canvas.getContext('2d');
+		context.fillStyle = 'red';	
+		// context.fillRect(100, 100, 200, 200);
+		// context.clearRect(150, 150, 100, 100);
+		// context.strokeStyle = 'red';
+		// context.lineWidth = 5;
+		// context.strokeRect(75, 75, 250, 250)
+
+		// //改变一下颜色
+		// context.strokeStyle  = 'deepskyblue';
+
+		// context.beginPath();
+
+		// context.moveTo(50, 300);
+
+		// context.lineTo(900, 50);
+		// context.lineTo(600, 400);
+		// context.strokeStyle  = 'blue';
+
+		// context.lineTo(350, 0);
+		// context.lineTo(50, 300);
+
+		// context.stroke();
+		// context.closePath();
+
+
+		// context.beginPath();
+		// context.moveTo(450, 50);
+		// context.lineTo(600, 50);
+		// context.lineTo(600, 200);
+		// context.lineTo(450, 50);
+		// context.stroke();
+		// context.closePath();
+
+
+
+		// context.beginPath();
+		// context.moveTo(400, 50);
+		// context.lineTo(400, 200);
+		// context.lineTo(550, 200);
+		// context.lineTo(400, 50);
+		// context.stroke();
+		// context.fillStyle = 'yellow'
+		// context.fill();
+		// context.closePath();
+
+		// context.beginPath();
+		// context.arc(700, 300, 100, Math.PI / 2, Math.PI / 2 * 3, false);
+		// context.arc(700, 300, 150, Math.PI / 2, Math.PI / 2 * 3, false);
+
+		// context.stroke();
+		// context.fill();
+		// context.closePath();
+
+		// context.beginPath();
+		// context.arc(700, 300, 150, Math.PI / 2, Math.PI / 2 * 3, false);
+		// context.stroke();
+		// context.fill();
+		// context.closePath();
+		context.strokeStyle = 'red';
+		context.beginPath();
+		context.arc(500, 300, 160, 0, Math.PI * 2, false);
+		context.fill();
+		context.stroke();
+		context.closePath();
+
+		context.beginPath();
+		context.arc(350, 150, 80, 0, Math.PI * 2, false);
+		context.fill();
+		context.stroke();
+		context.closePath();
+
+		context.beginPath();
+		context.arc(650, 150, 80, 0, Math.PI * 2, false);
+		context.fill();
+		context.stroke();
+		context.closePath();
+// 鼻子
+		context.beginPath();
+		context.arc(505, 360, 20, 0, Math.PI * 2, false);
+		context.fillStyle = 'black';
+		context.fill();
+		context.stroke();
+		context.closePath();
+
+		context.beginPath();
+		context.arc(510, 360, 8, 0, Math.PI * 2, false);
+		context.fillStyle = 'white';
+		context.strokeStyle = 'black';
+		context.fill();
+		context.stroke();
+		context.closePath();
+//眼睛
+		context.beginPath();
+		context.arc(425, 270, 30, 0, Math.PI * 2, false);
+		context.fillStyle = 'white';
+		context.fill();
+		context.stroke();
+		context.closePath();
+
+		context.beginPath();
+		context.arc(575, 270, 30, 0, Math.PI * 2, false);
+		context.fillStyle = 'white';
+		context.fill();
+		context.stroke();
+		context.closePath();
+//眼球
+		context.beginPath();
+		context.arc(435, 275, 10, 0, Math.PI * 2, false);
+		context.fillStyle = 'black';
+		context.fill();
+		context.stroke();
+		context.closePath();
+
+		context.beginPath();
+		context.arc(585, 275, 10, 0, Math.PI * 2, false);
+		context.fillStyle = 'black';
+		context.fill();
+		context.stroke();
+		context.closePath();
+
+//嘴巴
+
+		// context.beginPath();
+		// context.arc(510, 340, 100, Math.PI / 6, Math.PI / 6 * 5 , false);
+		// // context.fillStyle = 'white';
+		// context.lineWidth = 5;
+		// context.strokeStyle = 'black';
+		// // context.fill();
+		// context.stroke();
+		// context.closePath();
+
+
+
+		context.beginPath();
+		context.strokeStyle = 'black';
+		context.moveTo(575, 125);
+		context.lineTo(525, 175);
+		context.lineTo(700, 225);
+		context.lineTo(650, 275);
+		context.lineTo(575, 125);
+
+		context.lineWidth = 1;
+
+		context.fillStyle = 'pink';
+		context.fill();
+		context.stroke();
+		context.closePath();
+
+
+
+		context.beginPath();
+		context.moveTo(450, 400);
+		//二次贝塞尔曲线
+		context.lineWidth = 5;
+		context.fillStyle = 'green';
+		context.quadraticCurveTo(500, 475, 600, 400);
+		context.stroke();
+		context.fill();
+		context.closePath();
+
+		context.beginPath();
+		context.moveTo(300, 200);
+		//二次贝塞尔曲线
+		// context.lineWidth = 5;
+		// context.fillStyle = 'green';
+		// context.bezierCurveTo(500, 475, 600, 0, 750, 200);
+		// context.stroke();
+		// context.fill();
+		// context.closePath();
+
+		context.beginPath();
+		//裁剪之前先把当前场景保存下来
+		// context.save();
+		//裁剪区域
+		context.arc(500, 300, 20, 0, Math.PI * 2, false);
+		//裁剪
+		context.clip();
+		//在裁剪之后画一个清空矩形，但根据裁剪的原理，只有在裁剪区域才生效
+		context.clearRect(0, 0, canvas.width, canvas.height);
+		//然后在还原之前的场景
+		context.restore();
+
+		context.closePath();
+		
+		
+		
+		
+
+
+	</script>
+</html>

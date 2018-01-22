@@ -1,0 +1,243 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-size: 12px;
+	/*background: red;*/
+	box-sizing: border-box;
+}
+a{
+	text-decoration: none;
+}
+body{
+	width: 100%;
+}
+ul{
+	list-style: none;
+}
+.adv {
+	width: 100%;
+	background: #444444;
+	height: 40px;
+}
+nav {
+	width: 100%;
+	height: 44px;
+	background: #323232;
+}
+nav .mobile .left {
+	float: left;
+}
+nav .mobile .middle {
+	float: left;
+	margin-left: 45%;
+}
+nav .mobile .right {
+	float: right;
+}
+nav .mobile img{
+	width: 16px;
+	height: 20px;
+	margin:12px 5px;
+}
+nav ul {
+	clear: both;
+	width: 980px;
+	height: 44px;
+	margin: 0 auto;
+	line-height: 44px;
+}
+nav ul li:last-child{
+	display: none;
+}
+nav ul li:first-child{
+	display: none;
+}
+/*nav ul li{
+	float: left;
+	margin: 0 40px;
+	height: 44px;
+}
+nav ul li:last-child{
+	margin: 0;
+	vertical-align: top;
+}
+nav ul li a{
+	color: #fff;
+	display: inline-block;
+	width: 100%;
+	height: 44px;
+}
+
+nav ul li:first-child img{
+	width: 16px;
+	height: 20px;
+	vertical-align: top;
+	margin-top: 12px;
+}
+nav ul li img{
+	display: inline-block;
+}*/
+/*-------------------------------main------------------------------------*/
+main{
+	width: 1600px;
+	margin:0 auto;
+	clear: both;
+}
+main a{
+	color: #000;
+	display:inline-block;
+	width: 100%;
+	height: 100%;
+}
+main .first_part{
+	height: 582px;
+	background: #fafafa url(./新建文件夹/iphone_x_large.jpg) no-repeat 50% 277px;
+	text-align: center;
+	padding-top: 80px;
+}
+main .second_part{
+	height: 580px;
+	background: #f9f0eb url(./新建文件夹/iphone_8_large.jpg) no-repeat 50% 220px;
+	padding-top: 36px;
+	text-align: center;
+	margin-top: 12px;
+}
+main .third_part{
+	height: 628px;
+	background: #fafafa url(./新建文件夹/cny_gifts_large.png) no-repeat 50% 184px;
+	padding-top: 28px;
+	margin-top: 12px;
+	text-align: center;
+}
+
+.big {
+	font-size: 45px;
+	font-weight: blod;
+	line-height: 85px;
+}
+.discription {
+	font-size: 20px;
+	line-height: 26px;
+}
+main .forth_part{
+	/*margin-top: 12px;*/
+	padding:12px;
+}
+main .forth_part li:nth-child(even){
+	margin-left: 12px;
+}
+main .forth_part li{
+	height: 580px;
+	width: 782px;
+	float: left;
+	margin-bottom: 12px;
+	text-align: center;
+	padding-top: 60px;
+}
+main .forth_part li h2{
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 38px;
+}
+main .forth_part li p{
+	font-size: 16px;
+	line-height: 42px;
+}
+main .forth_part li:nth-child(1){
+	background:#fafafa url(./新建文件夹/watch_series_3_large.jpg) no-repeat 50% center;
+}
+main .forth_part li:nth-child(1) span {
+	color: red;
+	font-weight: blod;
+}
+main .forth_part li:nth-child(2){
+	background:#fafafa url(./新建文件夹/airpods_large.jpg) no-repeat 50% center;
+}
+main .forth_part li:nth-child(3){
+	background:#fafafa url(./新建文件夹/ipad_pro_large.jpg) no-repeat 50% center;
+}
+main .forth_part li:nth-child(4){
+	background:#1a1a1a url(./新建文件夹/imac_pro_large.jpg) no-repeat 50% 120px;
+}
+main .forth_part li:nth-child(5){
+	background:#fafafa url(./新建文件夹/accessories_large.jpg) no-repeat 50% 200px;
+}
+main .forth_part li:nth-child(6){
+	background:#fafafa url(./新建文件夹/customer_letter_large.png) no-repeat 50% center;
+}
+main .forth_part li:nth-child(4) a{
+	color: #fff;
+}
+
+
+footer{
+	width: 100%;
+	background: #f2f2f2;
+	clear: both;
+	height: 455px;
+}
+.foot_content{
+	width: 100%;
+	padding:20px 34px 0px 17px;
+}
+.foot_content .content ul{
+	cursor: pointer;
+	display: none;
+	line-height: 26px;
+	text-indent: 14px;
+	padding-bottom: 18px;
+}
+.foot_content .content{
+	border-bottom: 1px solid #d6d6d6;
+}
+.foot_content h2{
+	line-height: 39px;
+	cursor: pointer;
+}
+
+.foot_content .content ul li{
+	color: #555555;
+}
+.foot_content .content a{
+	color: #555555;
+}
+
+
+.foot_content ul li:hover{
+	text-decoration: underline;
+}
+.foot_content .cliam>p:first-child{
+	line-height: 16px;
+	margin:17px 0 15px 0;
+}
+.district {
+	line-height: 16px;
+	width: 42px;
+	text-align: right;
+	background: url(./新建文件夹/b.jpg) no-repeat left center;
+}
+.district a{
+	color:#555555;
+}
+
+.cliam{
+	line-height: 20px;
+}
+.cliam ul li {
+	float: left;
+	padding: 0 14px;
+	border-left: 1px solid #d6d6d6;
+}
+.cliam ul li:first-child{
+	padding: 0 14px 0 0;
+	border: none;
+}
+.cliam ul li a{
+	color:#555555;
+}
+.cliam ul li:hover{
+	text-decoration: underline;
+}
+.cliam>p:last-of-type{
+	clear: both;
+}

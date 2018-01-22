@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		鼠标事件
+	</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#container{
+			margin: 900px auto;
+			width: 600px;
+			height: 600px;
+			background: black;
+			position: relative;
+		}
+		#box{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position: absolute;
+		/*	left: 50px;
+			top: 50px*/;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="box"></div>
+	</div>
+
+</body>
+	var x1, y1, x2, y2, originX, originY;
+	<script type="text/javascript">
+
+		var box = document.querySelector('#box'); 
+		var container = document.querySelector('#container'); 
+		var body = document.body;
+		box.style.top = 0;
+		box.style.left = 0;
+		box.onmousedown = function () {
+			x1 = event.clientX;
+			y1 = event.clientY;
+			originX =  parseInt(box.style.left);
+			originY =  parseInt(box.style.top);
+			console.log(originX, originY)
+			container.addEventListener('mousemove', fn, false);
+		}
+
+
+		box.onmouseup = function () {
+			// console.log(1)
+			container.removeEventListener('mousemove', fn, false)
+		}
+
+
+		function fn () {
+			x2 = event.clientX;
+			y2 = event.clientY;
+			// console.log(x2, y2);
+			// console.log(x2 - x1, y2 - y1);
+			move(x2 -x1, y2 - y1);
+		} 
+
+		function move (x, y) {
+			// console.log(top, left);
+			box.style.left = originY + x + 'px';
+			box.style.top = originX + y + 'px';
+			// console.log(box.style.top , box.style.left);
+			// console.log(x, y);
+		}
+		// console.log(box.style.top + 5 + 'px');
+	</script>
+</html>
